@@ -432,7 +432,11 @@ a {
     }
 
     .eyes img{
-        left: 50vw;
+        left: 60vw;
+    }
+
+    .profile_imgc img {
+
     }
 
     .photos .container {
@@ -461,11 +465,28 @@ a {
     }
 
     .profile_imgc img {
-        height: 15rem;
+        height: 14rem;
     }
 
     .details h2, .details a {
         font-size: 2rem;
+    }
+
+    .pannel {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+
+    .pannel div {
+        display: flex;
+        margin-top: 2vh;
+        justify-content: left;
+        margin-left: 5vw;
+    }
+
+    .pannel img {
+        margin-right: 5vw;
     }
 }
 
