@@ -379,9 +379,9 @@ a {
 }
 
 /* Adaptação para dispositivos móveis */
-@media (max-width: 890px) {
+@media (max-width: 480px) {
     * {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .container {
