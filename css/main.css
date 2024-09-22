@@ -377,3 +377,95 @@ a {
     font-size: 0.8rem;
     text-align: center;
 }
+
+/* Adaptação para dispositivos móveis */
+@media (max-width: 768px) {
+    * {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .main {
+        margin-top: 10px;
+    }
+
+    .main .container {
+        flex-direction: column;
+    }
+
+    .main-content, .main-content.details {
+        margin-left: 0;
+        max-height: none;
+        padding: 5px;
+    }
+
+    .container .main-content {
+        padding: 5px;
+        width: 90vw;
+        min-width: 100px;
+    }
+
+    .title {
+        max-width: 70vw;
+        min-width: 0;
+    }
+
+    .title h1, .title p, .title i {
+        font-size: 2rem;
+    }
+
+    #bar, #details_bar {
+        position: relative;
+    }
+
+    #details_bar .container {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .menu p {
+        font-size: 2rem;
+    }
+
+    .eyes img{
+        left: 50vw;
+    }
+
+    .photos .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .photos.projects img {
+        width: 33%;
+        margin-bottom: 10px;
+    }
+
+    .photos.details {
+        max-width: 90vw;
+        max-height: max-content;
+        overflow: hidden;
+    }
+
+    .photos.details img  {
+        min-height: auto;
+        object-fit: contain;
+    }
+
+    .profile_imgl img, .profile_imgr img {
+        height: 12rem;
+    }
+
+    .profile_imgc img {
+        height: 15rem;
+    }
+
+    .details h2, .details a {
+        font-size: 2rem;
+    }
+}
+
