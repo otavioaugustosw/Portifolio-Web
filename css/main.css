@@ -8,12 +8,21 @@
     src: url("../fonts/Garamond.otf") format("opentype");
 }
 
+:root {
+    --home-theme: blue;
+    --home-theme-second: yellow;
+    --projects-theme: #6700e5;
+    --projects-theme-second: #22ff00;
+    --personal-theme: #de0000;
+    --personal-theme-second: #00d9ff;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: "Helvetica", sans-serif;
-    font-size: 18px;
+    font-size: 1.1rem;
     list-style: none;
 }
 
@@ -23,7 +32,7 @@
     width: 100%;
     position: relative;
 }
-
+/*FIXA A BAR NA POSIÇÃO NO CANTO ESQUERDO*/
 #bar, #details_bar {
     position: fixed;
 }
@@ -33,105 +42,67 @@
     min-width: 300px;
 }
 
-.main{
-    margin-top: 56px;
+.prefoot {
+    margin-bottom: 122px;
 }
 
+.main{
+    margin-top: 5%;
+}
+
+/*PRA DESKTOP DEIXA MENU DO LADO DO CONTEÚDO*/
 .main .container{
     display: flex;
     justify-content: space-between;
 }
 
+/*REVER ISSO*/
 .menu {
     position: sticky;
 }
 
-.prefoot {
-    margin-bottom: 122px;
-}
-
+/*LINKS FICAM UM EMBAIXO DO OUTRO*/
 .menu .container {
-    padding: 26px;
+    padding: 5%;
     display: block;
 }
 
+/*"TITULO DÊ UMA OLHADA"*/
 .menu p {
     font-family: Garamond, "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: 52px;
+    font-size: 3rem;
 }
 
+/*ESPAÇO ENTRE OS LINKS DO MENU*/
 .menu ul li {
     margin-top: 15px;
 }
 
+/*ESTILO DOS LINKS*/
 a {
     text-decoration: none;
     color: black;
-
 }
 
 .menu ul li a {
     padding: 0.3rem 4rem 0.3rem 0;
 }
 
-.menu ul li a:hover {
-    color: blue;
-    mix-blend-mode: darken;
+/*HOVER DOS LINKS NAS DIFERENTES SESSÕES*/
+.menu.home ul li a:hover {
+    color: var(--home-theme);
 }
 
-.menu.proj ul li a:hover {
-    color: #6700e5;
-    mix-blend-mode: darken;
-
+.menu.projects ul li a:hover {
+    color: var(--projects-theme);
 }
 
-.menu.pessoal ul li a:hover {
-    color: #de0000;
-    mix-blend-mode: darken;
+.menu.personal ul li a:hover {
+    color: var(--personal-theme);
 }
 
-.menu img {
-    height: 122px;
-    position: absolute;
-    top: 0;
-    left: 315px;
-}
-
-.main-content{
-    margin-left: 600px;
-    display: block;
-    max-height: 800px;
-    padding: 10px;
-}
-
-.main-content.details{
-    margin-left: 300px;
-    max-height: 1000px;
-    margin-bottom: 20vw;
-}
-
-.main-content.details.title{
-    margin-bottom: 5vw;
-}
-
-.container .main-content {
-    padding: 10px;
-    width: 750px;
-    min-width: 600px;
-}
-
-.container .main-content.details {
-    padding: 10px;
-    width: 70%;
-    min-width: 600px;
-}
-
-.main-content.proj, .main-content.pessoal {
-    margin-top: 60px;
-    max-height: max-content;
-}
-
+/*TAMANHO DO TITLE DENTRO DO BAR*/
 .title {
     width: 75%;
     min-width: 400px;
@@ -143,19 +114,33 @@ a {
     display: block;
 }
 
+/*DEFINE O TITULO DAS SESSÕES*/
 .title h1, .title p, .title i{
     font-family: Garamond, sans-serif;
     font-weight: lighter;
-    font-size: 52px;
+    font-size: 3rem;
+    /*pode ser 52px*/
     mix-blend-mode: darken;
-    color: #0000FFFF;
 }
 
+.title.home h1, .title.home i, .title.home p{
+    color: var(--home-theme);
+}
+
+.title.projects h1, .title.projects i, .title.projects p{
+    color: var(--projects-theme);
+}
+
+.title.personal h1, .title.personal i, .title.personal p{
+    color: var(--personal-theme);
+}
+
+/*DEFINE TAMANHO DAS ESTRELAS DA HOME*/
 .title img{
     height: 8%;
     position: absolute;
 }
-
+/*DEFINE LOCALIZAÇÃO DAS ESTRELAS DENTRO DO TITLE*/
 .title .ico1{
     top: 82%;
     right: 40%;
@@ -170,6 +155,13 @@ a {
     top: 78%;
     right: 50%;
 }
+/*DEFINE A ABERTURA E FECHAMENTO DO OLHO*/
+.eyes img {
+    height: 7rem;
+    position: absolute;
+    top: 0;
+    left: 330px
+}
 
 #eye_closed {
     display: none;
@@ -183,16 +175,8 @@ a {
     display: block;
 }
 
-.title.proj h1, .title.proj i, .title.proj p{
-    color: #6700e5;
-}
-
-.title.pessoal h1, .title.pessoal i, .title.pessoal p{
-    color: #de0000;
-}
-
+/*LINHA DE MARCA-TEXTO NO TITULO*/
 .square {
-    background-color: yellow;
     width: 56%;
     height: 16%;
     position: absolute;
@@ -200,68 +184,64 @@ a {
     top: 2%;
     z-index: -1;
 }
-.square.proj {
-    background-color: #22ff00;
+
+/*ESTILIZAÇÃO DO MARCA-TEXTO NAS SESSÕES*/
+.square.home {
+    background-color: var(--home-theme-second);;
 }
 
-.square.pessoal {
-    background-color: #00d9ff;
+.square.personal {
+    background-color: var(--personal-theme-second);
 }
 
+.square.projects {
+    background-color: var(--projects-theme-second);
+}
 
+.main-content{
+    display: block;
+    max-height: 800px;
+    padding: 10px;
+    margin-left: max(35vw, 450px);
+}
+
+.container .main-content {
+    padding: 10px;
+    width: 750px;
+    min-width: 600px;
+}
+
+.main-content.details{
+    margin-left: 300px;
+    max-height: 1000px;
+    margin-bottom: 20vw;
+}
+
+.main-content.details.title{
+    margin-bottom: 5vw;
+}
+
+.container .main-content.details {
+    padding: 10px;
+    width: 70%;
+    min-width: 600px;
+}
+
+.main-content.projects, .main-content.personal {
+    margin-top: 40px;
+    max-height: max-content;
+}
+
+/*CONJUNTO DE 3 FOTOS NA HOME*/
 .photos.bio .container {
-    min-height: 350px ;
+    min-height: 20rem;
     width: 100%;
-}
-
-.photos {
-    min-height: max-content ;
-    width: 100%;
-    /*overflow: hidden;*/
-}
-
-.photos.proj .container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.photos.proj .projico {
-    border: 1px solid white;
-}
-
-.photos.proj .onlyphoto img {
-    width: 100%;
-    object-fit: cover;
-    max-height: 60vh;
-}
-
-.photos.details img  {
-    width: 100%;
-    min-height: 600px;
-    height: 100%;
-    object-fit: cover;
-    border: 1px solid black;
-}
-
-.photos.proj img {
-    margin-top: 1px;
-    width: 33%;
-    object-fit: cover;
-    border: 1px solid black;
-}
-
-.photos.pessoal img {
-    margin-top: 1px;
-    width: 49%;
-    object-fit: cover;
-    border: 1px solid black;
 }
 
 .profile_imgl {
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 1.5vh;
 }
 
 .profile_imgc {
@@ -273,32 +253,71 @@ a {
 
 .profile_imgr {
     position: absolute;
-    top: 15px;
     left: 0;
+    top: 1.5vh;
 }
 
 .profile_imgl img, .profile_imgr img {
-    height: 320px;
+    height: 18rem;
     border: 1px solid black;
-
 }
 
 .profile_imgc img {
-    height: 350px;
+    height: 20rem;
     border: 1px solid black;
+}
 
+/*PHOTOS DOS CONTEÚDOS DE ARTIGOS*/
+.photos {
+    min-height: max-content ;
+    width: 100%;
+}
+
+.photos.projects img {
+    width: 33%;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+.photos.projects .container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.photos .onlyphoto.projects img, .photos .onlyphoto.personal img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 60vh;
+    border: 1px solid black;
+}
+
+.photos.details img  {
+    width: 100%;
+    min-height: 600px;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid black;
+}
+
+.photos.personal img {
+    margin-top: 1px;
+    width: 49%;
+    object-fit: cover;
+    border: 1px solid black;
 }
 
 .details .container{
-    margin-top: 10px;
+    margin-top: 2%;
     display: block;
     background-color: white;
 }
 
-.details h2, .details a,  #details_bar .pessoal a {
+/*FONTE ESTILO JORNAL PARA TITULOS*/
+.details h2, .details a,  #details_bar .personal a {
     font-family: Garamond, "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: 46px;
+    font-size: 2.8rem;
     color: black;
 }
 
@@ -306,14 +325,16 @@ a {
     text-decoration: none;
 }
 
-.proj .details a:hover {
+/*HOVER DOS LINKS DOS ARTIGOS*/
+.projects .details a:hover {
     color: #6700e5;
 }
 
-.pessoal .details a:hover,  #details_bar .pessoal a:hover{
+.personal .details a:hover,  #details_bar .personal a:hover{
     color: #de0000;
 }
 
+/*DEFINE OS ESTILIZACÃO PARAGRÁFOS DO ABOUT*/
 .about {
     margin-top: 20px;
     display: flex;
@@ -325,33 +346,34 @@ a {
     margin-right: 6%;
 }
 
+.about article p {
+    margin-top: 2vh;
+    text-align: justify;
+}
+
 .about article a {
     margin-top: 22px;
     font-size: 22px;
     font-family: Helvetica, Arial, sans-serif;
 }
 
-.about article p {
-    margin-top: 16px;
-    text-align: justify;
-}
-
+/*PAINEL DE TECNOLOGIAS TRABALHADAS*/
 .pannel {
-    background-color: #efefef;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    min-width: 30%;
+    padding: 5%;
     border: 1px solid black ;
     border-radius: 8px;
-    padding: 16px;
-    justify-content: space-between;
-    display: flex;
-    margin-top: 16px;
-    min-width: 320px;
+    background-color: #efefef;
 }
 
 .pannel img {
-    height: 50px;
+    height: 2rem;
 }
 
 .pannel div p{
-    text-align: center;
     font-size: 0.8rem;
+    text-align: center;
 }
