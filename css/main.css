@@ -54,6 +54,8 @@
 .main .container{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 2%;
+
 }
 
 /*REVER ISSO*/
@@ -482,7 +484,7 @@ a {
         display: flex;
         margin-top: 2vh;
         justify-content: left;
-        margin-left: 5vw;
+        margin-left: 25vw;
     }
 
     .pannel img {
